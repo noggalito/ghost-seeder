@@ -3,6 +3,8 @@ require "ghost/seeder/ar_models"
 require "ghost/seeder/db_connection"
 require "ghost/seeder/models/tags_seed"
 require "ghost/seeder/models/posts_seed"
+require "ghost/seeder/models/settings_seed"
+require "ghost/seeder/models/post_tags_seed"
 
 module Ghost
   module Seeder
@@ -49,8 +51,8 @@ module Ghost
         [
           Models::TagsSeed,
           Models::PostsSeed,
-          # SettingsSeed,
-          # PostTagsSeed
+          Models::SettingsSeed,
+          Models::PostTagsSeed
         ]
       end
     end
