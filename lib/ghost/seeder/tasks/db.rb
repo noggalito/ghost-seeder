@@ -1,3 +1,5 @@
+require "ghost/seeder"
+
 module Ghost
   module Seeder
     module Tasks
@@ -8,7 +10,7 @@ module Ghost
           namespace :db do
             desc "set WIPE_DB if you want to wipe"
             task :seed do
-              Ghost::Seeder.run
+              Ghost::Seeder::Runner.run
             end
           end
         end
