@@ -16,6 +16,12 @@ module Ghost
             updated_by: first_user.id
           )
         end
+
+        def defaults
+          {
+            uuid: "<%= uuid %>"
+          }
+        end
       end
     end
   end
