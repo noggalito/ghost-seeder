@@ -1,3 +1,5 @@
+require "active_record"
+
 module Ghost
   module Seeder
     class DbConnection
@@ -44,7 +46,7 @@ module Ghost
       end
 
       def monkey_patch_sqlite3!
-        require "./config/seed/monkey_patch_sqlite3"
+        require "ghost/seeder/monkey_patch_sqlite3"
       end
     end
   end
