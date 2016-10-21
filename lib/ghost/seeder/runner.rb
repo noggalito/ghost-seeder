@@ -1,3 +1,5 @@
+require "ghost/seeder/db_connection"
+
 module Ghost
   module Seeder
     class Runner
