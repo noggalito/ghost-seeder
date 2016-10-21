@@ -1,4 +1,4 @@
-require "ghost/seeder"
+require "ghost/seeder/runner"
 
 module Ghost
   module Seeder
