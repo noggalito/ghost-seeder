@@ -35,6 +35,8 @@ module Ghost
           def yaml_bindings
             YamlBindings.new
           end
+
+          def klass; raise NotImplementedError; end
         end
 
         attr_reader :record, :attributes
