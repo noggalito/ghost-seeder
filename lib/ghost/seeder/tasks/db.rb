@@ -6,9 +6,9 @@ module Ghost
 
         def load_tasks
           namespace :db do
-            desc "set FORCE=true if you want to wipe"
+            desc "set WIPE_DB if you want to wipe"
             task :seed do
-              puts "seeding!"
+              Ghost::Seeder.run
             end
           end
         end
