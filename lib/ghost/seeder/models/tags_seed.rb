@@ -19,7 +19,7 @@ module Ghost
 
         def defaults
           {
-            uuid: "<%= uuid %>"
+            uuid: yaml_bindings_helper(:uuid)
           }
         end
       end

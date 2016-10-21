@@ -24,12 +24,16 @@ module Ghost
                 File.read(
                   "./config/seed/fixtures/#{identifier}.yml"
                 )
-              ).result(YamlBindings.new.helper)
+              ).result(yaml_bindings.helper)
             )
           end
 
           def seeds
             load_fixtures klass.to_s.downcase.pluralize
+          end
+
+          def yaml_bindings
+            YamlBindings.new
           end
         end
 
@@ -51,6 +55,11 @@ module Ghost
         end
 
         private
+
+        def yaml_bindings_helper(method)
+          @yaml_bindings ||= self.class.yaml_bindings
+          @yaml_bindings.send(method)
+        end
 
         def first_user
           @first_user ||= User.first

@@ -23,14 +23,14 @@ module Ghost
 
         def defaults
           {
-            uuid: "<%= uuid %>",
             created_at: Time.now,
             updated_at: Time.now,
             published_at: Time.now,
             page: false,
             featured: false,
             language: "en_US",
-            status: "published"
+            status: "published",
+            uuid: yaml_bindings_helper(:uuid)
           }
         end
       end
