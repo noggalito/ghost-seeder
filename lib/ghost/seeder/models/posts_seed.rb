@@ -1,5 +1,5 @@
-require "ghost/seeder/models/generic_seed"
 require "redcarpet"
+require "ghost/seeder/models/generic_seed"
 
 module Ghost
   module Seeder
