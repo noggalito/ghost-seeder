@@ -1,4 +1,5 @@
 require "ghost/seeder/models/generic_seed"
+require "redcarpet"
 
 module Ghost
   module Seeder
@@ -11,13 +12,12 @@ module Ghost
         private
 
         def attributes_for_create
-          html = "<p>#{record.markdown.split("\n").join("</p><p>")}</p>"
           defaults.merge(attributes).merge(
             author_id: first_user.id,
             created_by: first_user.id,
             updated_by: first_user.id,
             published_by: first_user.id,
-            html: html
+            html: redcarpet.render(record.markdown)
           )
         end
 
@@ -32,6 +32,12 @@ module Ghost
             status: "published",
             uuid: yaml_bindings_helper(:uuid)
           }
+        end
+
+        def redcarpet
+          Redcarpet::Markdown.new(
+            Redcarpet::Render::HTML.new(hard_wrap: true)
+          )
         end
       end
     end
