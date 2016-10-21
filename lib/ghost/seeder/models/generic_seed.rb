@@ -44,7 +44,7 @@ module Ghost
         def seed!
           if record_exists?
             Logger.info "#{self.class} exists:", record_slug
-            raise "#{record_slug} not expected to exist!" if Seed.wipe_db?
+            raise "#{record_slug} not expected to exist!" if Runner.wipe_db?
           else
             create_record!
           end

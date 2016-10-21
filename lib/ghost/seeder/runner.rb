@@ -2,6 +2,7 @@ require "ghost/seeder/logger"
 require "ghost/seeder/ar_models"
 require "ghost/seeder/db_connection"
 require "ghost/seeder/models/tags_seed"
+require "ghost/seeder/models/posts_seed"
 
 module Ghost
   module Seeder
@@ -47,7 +48,7 @@ module Ghost
       def klasses
         [
           Models::TagsSeed,
-          # PostsSeed,
+          Models::PostsSeed,
           # SettingsSeed,
           # PostTagsSeed
         ]
