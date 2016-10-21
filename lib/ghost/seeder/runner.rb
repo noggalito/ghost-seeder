@@ -32,8 +32,8 @@ module Ghost
       def run
         db.connect!
         Logger.warn "seeding database for", environment
+        wipe_records! if self.class.wipe_db?
         klasses.each do |klass|
-          klass.wipe_records! if self.class.wipe_db?
           klass.perform_queries
           Logger.success klass
         end
@@ -42,6 +42,12 @@ module Ghost
       end
 
       private
+
+      def wipe_records!
+        klasses.reverse.each do |klass|
+          klass.wipe_records!
+        end
+      end
 
       def db
         @db ||= DbConnection.new(environment)

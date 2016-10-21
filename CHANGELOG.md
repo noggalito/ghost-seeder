@@ -17,3 +17,7 @@ _initial release_
 ## v0.0.4
 
 * parse markdown when casting to HTML
+
+## v0.0.5
+
+* reverse models array before wiping DB so that we don't break foreign keys
