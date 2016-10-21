@@ -11,7 +11,7 @@ module Ghost
         private
 
         def attributes_for_create
-          attributes.merge(
+          defaults.merge(attributes).merge(
             created_by: first_user.id,
             updated_by: first_user.id
           )
