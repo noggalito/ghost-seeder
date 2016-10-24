@@ -2,7 +2,7 @@
 
 ## v0.0.1
 
-_initial release_
+_initial release. tested with Ghost 0.11.1_
 
 * imported from old implementation
 
